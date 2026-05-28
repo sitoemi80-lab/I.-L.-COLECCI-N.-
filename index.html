@@ -10,9 +10,10 @@
         .logo { width: 150px; margin: 20px 0; }
         h2 { text-transform: uppercase; letter-spacing: 2px; margin: 30px 0; }
         .catalog { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .product { text-align: center; margin-bottom: 20px; }
-        .product img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid #222; }
-        .product-name { font-size: 0.7rem; text-transform: uppercase; margin-top: 8px; display: block; }
+        .product { text-align: center; margin-bottom: 20px; text-decoration: none; display: block; }
+        .product img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid #222; filter: grayscale(100%); transition: 0.3s; }
+        .product:hover img { filter: grayscale(0%); }
+        .product-name { font-size: 0.7rem; text-transform: uppercase; margin-top: 8px; display: block; color: white; }
         .product-price { font-size: 0.8rem; color: #aaa; margin-top: 2px; }
     </style>
 </head>
@@ -21,26 +22,26 @@
         <img src="IMG-20260526-WA0043.jpg" alt="Logo" class="logo">
         <h2>New Drop</h2>
         <div class="catalog">
-            <div class="product">
+            <a href="producto.html" class="product">
                 <img src="IMG-20260527-WA0037.jpg" alt="EUPHORIA">
                 <span class="product-name">EUPHORIA</span>
                 <div class="product-price">$399.00</div>
-            </div>
-            <div class="product">
+            </a>
+            <a href="producto.html" class="product">
                 <img src="file_00000000348471fd84180a42e9e58a39.jpg" alt="STARGAZE">
                 <span class="product-name">STARGAZE</span>
                 <div class="product-price">$399.00</div>
-            </div>
-            <div class="product">
+            </a>
+            <a href="producto.html" class="product">
                 <img src="file_000000006bf071fdb01ab21f5deca877.jpg" alt="VOID">
                 <span class="product-name">VOID</span>
                 <div class="product-price">$399.00</div>
-            </div>
-            <div class="product">
+            </a>
+            <a href="producto.html" class="product">
                 <img src="file_00000000df7c71fd8bb3f8fec92be627.jpg" alt="SKULLSTAR">
                 <span class="product-name">SKULLSTAR</span>
                 <div class="product-price">$399.00</div>
-            </div>
+            </a>
         </div>
     </div>
 </body>

@@ -2,11 +2,32 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Detalle de Producto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I.L. COLECCIÓN</title>
+    <style>
+        body { background-color: #050505; color: white; font-family: sans-serif; text-align: center; padding: 20px; }
+        .producto-img { width: 100%; max-width: 400px; border: 1px solid #222; }
+        .btn-whatsapp { background-color: #25D366; color: white; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 20px; }
+        .proximamente { color: #888; font-style: italic; margin-top: 20px; }
+    </style>
 </head>
-<body style="background:#050505; color:white; text-align:center; padding-top:50px; font-family: sans-serif;">
-    <h1>PRÓXIMAMENTE</h1>
-    <p>Este artículo estará disponible en nuestro drop de Junio 2026.</p>
-    <a href="index.html" style="color:white; text-decoration: underline;">Volver al inicio</a>
+<body>
+    <h1>I.L. COLECCIÓN</h1>
+    <!-- Cambia el nombre de la imagen aquí según el producto -->
+    <img src="IMG-20260527-WA0037.jpg" class="producto-img" alt="Producto">
+    
+    <h2>Nombre del Producto</h2>
+    <p>Precio: $399.00</p>
+
+    <!-- OPCIÓN 1: Si ya está a la venta, usa este botón -->
+    <a href="https://wa.me/525580830028?text=Hola!%20Quiero%20comprar%20este%20producto." class="btn-whatsapp">
+        PEDIR POR WHATSAPP 💬
+    </a>
+
+    <!-- OPCIÓN 2: Si aún no sale, borra el bloque de arriba y deja solo este texto: -->
+    <!-- <p class="proximamente">PRÓXIMAMENTE</p> -->
+
+    <br><br>
+    <a href="index.html" style="color:#aaa;">Volver al catálogo</a>
 </body>
 </html>

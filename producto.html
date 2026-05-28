@@ -3,31 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I.L. COLECCIÓN</title>
+    <title>Detalle - I.L. COLECCIÓN</title>
     <style>
         body { background-color: #050505; color: white; font-family: sans-serif; text-align: center; padding: 20px; }
-        .producto-img { width: 100%; max-width: 400px; border: 1px solid #222; }
-        .btn-whatsapp { background-color: #25D366; color: white; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 20px; }
-        .proximamente { color: #888; font-style: italic; margin-top: 20px; }
+        img { width: 100%; max-width: 400px; border: 1px solid #222; }
+        .btn { background-color: #25D366; color: white; padding: 15px 30px; text-decoration: none; font-weight: bold; border-radius: 5px; display: inline-block; margin-top: 20px; }
     </style>
 </head>
 <body>
-    <h1>I.L. COLECCIÓN</h1>
-    <!-- Cambia el nombre de la imagen aquí según el producto -->
-    <img src="IMG-20260527-WA0037.jpg" class="producto-img" alt="Producto">
-    
-    <h2>Nombre del Producto</h2>
+    <h1 id="titulo">Producto</h1>
+    <img id="imagen" src="" alt="Producto">
     <p>Precio: $399.00</p>
-
-    <!-- OPCIÓN 1: Si ya está a la venta, usa este botón -->
-    <a href="https://wa.me/525580830028?text=Hola!%20Quiero%20comprar%20este%20producto." class="btn-whatsapp">
-        PEDIR POR WHATSAPP 💬
-    </a>
-
-    <!-- OPCIÓN 2: Si aún no sale, borra el bloque de arriba y deja solo este texto: -->
-    <!-- <p class="proximamente">PRÓXIMAMENTE</p> -->
-
+    <a id="btn-comprar" href="#" class="btn">PEDIR POR WHATSAPP 💬</a>
     <br><br>
-    <a href="index.html" style="color:#aaa;">Volver al catálogo</a>
+    <a href="index.html" style="color:#aaa;">Volver al inicio</a>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const nombre = params.get('nombre');
+        const img = params.get('img');
+        document.getElementById('titulo').innerText = nombre;
+        document.getElementById('imagen').src = img;
+        document.getElementById('btn-comprar').href = "https://wa.me/525580830028?text=Hola!%20Me%20interesa%20la%20prenda:%20" + nombre;
+    </script>
 </body>
 </html>

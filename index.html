@@ -2,51 +2,43 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I.L. COLECCIÓN</title>
     <style>
-        body { background-color: #050505; color: #ffffff; font-family: sans-serif; margin: 0; padding: 10px; }
-        .container { max-width: 600px; margin: 0 auto; text-align: center; }
-        .logo { width: 150px; margin: 20px 0; }
-        nav { text-align: center; padding: 20px; border-bottom: 1px solid #222; margin-bottom: 20px; }
-        nav a { color: white; text-decoration: none; margin: 0 15px; font-size: 0.9rem; }
-        .catalog { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .product { text-align: center; margin-bottom: 20px; text-decoration: none; display: block; }
-        .product img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border: 1px solid #222; }
-        .product-name { font-size: 0.7rem; text-transform: uppercase; margin-top: 8px; color: white; display: block; }
+        body { background: #0a0a0a; color: #fff; font-family: 'Helvetica', sans-serif; text-align: center; margin: 0; padding: 50px; }
+        .hero { margin-bottom: 50px; }
+        h1 { font-size: 3rem; letter-spacing: -2px; text-transform: uppercase; }
+        #countdown { font-size: 2rem; color: #888; margin: 20px 0; font-family: monospace; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 800px; margin: 0 auto; }
+        .item { background: #1a1a1a; padding: 20px; border: 1px solid #333; }
+        footer { margin-top: 50px; font-size: 0.8rem; color: #444; }
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html">🏠 INICIO</a>
-        <a href="faq.html">❓ FAQ</a>
-    </nav>
-    <div class="container">
-        <img src="IMG-20260526-WA0043.jpg" alt="Logo" class="logo">
-        <div class="catalog">
-            <a href="producto.html?nombre=EUPHORIA&img=IMG-20260527-WA0037.jpg" class="product">
-                <img src="IMG-20260527-WA0037.jpg" alt="EUPHORIA">
-                <span class="product-name">EUPHORIA</span>
-            </a>
-            <a href="producto.html?nombre=STARGAZE&img=file_00000000348471fd84180a42e9e58a39.jpg" class="product">
-                <img src="file_00000000348471fd84180a42e9e58a39.jpg" alt="STARGAZE">
-                <span class="product-name">STARGAZE</span>
-            </a>
-            <a href="producto.html?nombre=VOID&img=file_000000006bf071fdb01ab21f5deca877.jpg" class="product">
-                <img src="file_000000006bf071fdb01ab21f5deca877.jpg" alt="VOID">
-                <span class="product-name">VOID</span>
-            </a>
-            <a href="producto.html?nombre=SKULLSTAR&img=file_00000000df7c71fd8bb3f8fec92be627.jpg" class="product">
-                <img src="file_00000000df7c71fd8bb3f8fec92be627.jpg" alt="SKULLSTAR">
-                <span class="product-name">SKULLSTAR</span>
-            </a>
-        </div>
+
+    <div class="hero">
+        <h1>I.L. COLECCIÓN</h1>
+        <p>Drop 01 | Disponibilidad Limitada (9 Piezas)</p>
+        <div id="countdown"></div>
     </div>
-    <footer style="text-align:center; padding: 40px 10px; color: #fff; font-size: 0.9rem;">
-        <p style="color: #aaa; margin-bottom: 15px;">CONTACTO DIRECTO</p>
-        <div style="margin-bottom: 10px;"><a href="https://wa.me/525580830028" style="color:white; text-decoration:none;">💬 WhatsApp</a></div>
-        <div style="margin-bottom: 10px;"><a href="https://instagram.com/il.coleccion" style="color:white; text-decoration:none;">📸 Instagram (@il.coleccion)</a></div>
-        <div style="margin-bottom: 10px;"><a href="https://tiktok.com/@ilcoleccion" style="color:white; text-decoration:none;">🎵 TikTok (@ilcoleccion)</a></div>
-    </footer>
+
+    <div class="gallery">
+        <div class="item"><h3>Diseño 01</h3><p>Estética Distressed</p></div>
+        <div class="item"><h3>Diseño 02</h3><p>Corte Baggy</p></div>
+        <div class="item"><h3>Diseño 03</h3><p>Textil Premium</p></div>
+    </div>
+
+    <script>
+        const countDownDate = new Date("Jun 4, 2026 18:30:00").getTime();
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("countdown").innerHTML = d + "d " + h + "h " + m + "m " + s + "s ";
+            if (distance < 0) { clearInterval(x); document.getElementById("countdown").innerHTML = "DROP ABIERTO"; }
+        }, 1000);
+    </script>
+    <footer>© 2026 I.L. COLECCIÓN. EST. 2026</footer>
 </body>
 </html>

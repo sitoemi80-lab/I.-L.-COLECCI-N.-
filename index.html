@@ -2,47 +2,51 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I.L. COLECCIÓN | DROP 01</title>
     <style>
-        body { background: #000; color: #fff; font-family: 'Helvetica', sans-serif; text-align: center; margin: 0; padding: 20px; }
-        .hero { margin: 60px 0; }
-        h1 { font-size: 4rem; letter-spacing: -4px; text-transform: uppercase; margin: 0; }
-        #countdown { font-size: 2.5rem; color: #ff3333; margin: 20px 0; font-family: monospace; font-weight: bold; }
-        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .item { background: #111; padding: 10px; border: 1px solid #222; transition: transform 0.3s; }
-        .item:hover { transform: scale(1.02); border-color: #fff; }
-        img { width: 100%; height: auto; display: block; filter: grayscale(20%); }
-        .info { padding: 15px; text-align: left; }
-        footer { margin-top: 80px; color: #555; }
+        body { background: #000; color: #fff; font-family: 'Arial', sans-serif; margin: 0; padding: 0; text-align: center; }
+        .hero { padding: 60px 20px; }
+        h1 { font-size: 3.5rem; letter-spacing: -3px; text-transform: uppercase; margin: 0; }
+        #countdown { font-size: 2rem; color: #fff; margin: 20px 0; font-family: 'Courier New', monospace; border: 1px solid #333; padding: 15px; display: inline-block; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; padding: 20px; max-width: 1000px; margin: auto; }
+        .item { background: #0a0a0a; border: 1px solid #222; padding: 10px; }
+        .item img { width: 100%; height: auto; filter: grayscale(20%) contrast(1.1); }
+        .cta { margin: 50px 0; }
+        .btn { background: #fff; color: #000; padding: 15px 30px; text-decoration: none; font-weight: bold; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
     <div class="hero">
         <h1>I.L. COLECCIÓN</h1>
-        <p>DROP 01 | DISPONIBILIDAD LIMITADA: 9 PIEZAS</p>
-        <div id="countdown">Cargando...</div>
+        <p>DROP 01 | LIMITADO A 9 PIEZAS</p>
+        <div id="countdown">CARGANDO...</div>
     </div>
 
     <div class="gallery">
-        <!-- Reemplaza 'tu-imagen.jpg' por el nombre real de tus archivos -->
-        <div class="item"><img src="tu-imagen-1.jpg" alt="Prenda 01"><div class="info"><h3>PIEZA 01</h3><p>Estética Distressed</p></div></div>
-        <div class="item"><img src="tu-imagen-2.jpg" alt="Prenda 02"><div class="info"><h3>PIEZA 02</h3><p>Corte Baggy</p></div></div>
-        <div class="item"><img src="tu-imagen-3.jpg" alt="Prenda 03"><div class="info"><h3>PIEZA 03</h3><p>Textil Premium</p></div></div>
+        <!-- Imágenes de 1000058156.jpg reflejadas aquí -->
+        <div class="item"><img src="1000058156.jpg" alt="I.L. Colección Diseño"></div>
+        <div class="item"><img src="1000058156.jpg" alt="Detalle de Marca"></div>
+        <div class="item"><img src="1000058156.jpg" alt="Aplicación Metal"></div>
+    </div>
+
+    <div class="cta">
+        <a href="https://wa.me/TU_NUMERO_AQUI" class="btn">Solicitar Acceso Anticipado</a>
     </div>
 
     <script>
-        const countDownDate = new Date("Jun 4, 2026 18:30:00").getTime();
-        const x = setInterval(function() {
+        const target = new Date("Jun 4, 2026 18:30:00").getTime();
+        const timer = setInterval(() => {
             const now = new Date().getTime();
-            const distance = countDownDate - now;
-            const d = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((distance % (1000 * 60)) / 1000);
-            document.getElementById("countdown").innerHTML = d + "d " + h + "h " + m + "m " + s + "s ";
-            if (distance < 0) { clearInterval(x); document.getElementById("countdown").innerHTML = "DROP ABIERTO"; }
+            const diff = target - now;
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+            document.getElementById("countdown").innerHTML = `${d}d ${h}h ${m}m ${s}s`;
+            if (diff < 0) { clearInterval(timer); document.getElementById("countdown").innerHTML = "DROP ABIERTO"; }
         }, 1000);
     </script>
-    <footer>© 2026 I.L. COLECCIÓN. EST. 2026</footer>
 </body>
 </html>
